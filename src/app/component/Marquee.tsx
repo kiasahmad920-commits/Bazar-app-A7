@@ -1,4 +1,5 @@
 import React from "react";
+import MarqueeText from "react-marquee-text";
 
 const Marquee = async () => {
   const res = await fetch(
@@ -20,14 +21,14 @@ const Marquee = async () => {
   }
 
   return (
-  <div className="overflow-hidden bg-green-600 py-2 text-white">
-    <div className="marquee-track">
+  <div className="bg-green-600 py-2 text-white overflow-hidden">
+    <MarqueeText direction="right" duration={10}>
       {[...products, ...products].map((product: any, index: number) => (
         <span key={index} className="mx-4 shrink-0">
           {product.nameBn} •
         </span>
       ))}
-    </div>
+    </MarqueeText>
   </div>
 );
 };
