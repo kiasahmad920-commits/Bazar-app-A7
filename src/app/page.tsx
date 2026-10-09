@@ -1,9 +1,12 @@
-
+import { Suspense } from "react";
+import Marquee from "./component/Marquee";
 
 export default function Home() {
   return (
-    <div >
-      
-    </div>
+    <main>
+      <Suspense fallback={<p>Loading...</p>}>
+        <Marquee />
+      </Suspense>
+    </main>
   );
 }
